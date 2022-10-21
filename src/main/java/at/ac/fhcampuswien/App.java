@@ -119,7 +119,7 @@ public class App {
 
         for (int i = 0; i < inputText.length; i++) {
 
-            if (i >= 0 && inputText[i] <= 64 || inputText[i] >= 91 && inputText[i] <= 96 || inputText[i] >= 123 && inputText[i] <= 127)
+            if (i >= 1 && inputText[i] <= 64 || inputText[i] >= 91 && inputText[i] <= 96 || inputText[i] >= 123 && inputText[i] <= 127)
                 inputText[i] = 32;
         }
 
