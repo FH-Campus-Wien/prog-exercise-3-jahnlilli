@@ -101,6 +101,33 @@ public class App {
 
     // Task 5
 
+    public static String camelCase(String input) {
+        char[] inputText = input.toCharArray();
+        if (inputText[0] >= 97 & inputText[0] <= 122)
+            inputText[0] -= 32;
+
+
+        for (int i = 0; i < inputText.length; i++) {
+                if (i >= 1 && inputText[i - 1] == 32 && inputText[i] >= 97 && inputText[i] <= 122)
+                    inputText[i] -= 32;
+        }
+
+        for (int i = 0; i < inputText.length; i++) {
+            if (i >= 1 && inputText[i - 1] != 32 && inputText[i] >= 65 && inputText[i] <= 90)
+                inputText[i] += 32;
+        }
+
+        for (int i = 0; i < inputText.length; i++) {
+
+            if (i >= 0 && inputText[i] <= 64 || inputText[i] >= 91 && inputText[i] <= 96 || inputText[i] >= 123 && inputText[i] <= 127)
+                inputText[i] = 32;
+        }
+
+            String output = String.valueOf(inputText).replaceAll(" ", "");
+
+            return output;
+
+    }
 
     // Task 6
 
@@ -133,20 +160,13 @@ public class App {
 
 
 
-
-
-
-
-
-
-
     public static void main(String[] args) {
         // test your method implementations here
         // make method calls
         // print their results
         // etc.
 
-        /* task 1
+        /* mitschrift übungseinheit
 
         void onemonthcalendar (int tage_max), int start)
         final int SPALTE_MAX = 7;
